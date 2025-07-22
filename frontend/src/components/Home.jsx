@@ -17,7 +17,7 @@ function Home(){
 
     const fetchUserData=async () => {
         try {
-            const getdata=await axios.get("http://localhost:8080/api");
+            const getdata=await axios.get("https://scoreboard-dq8m.onrender.com/api");
             setUserData(getdata.data);
             console.log(getdata.data);
         } catch (error) {
@@ -28,7 +28,7 @@ function Home(){
     const getPoints=async (id) => {
         const newData={"_id":id};
         try {
-            const rankData=await axios.post("http://localhost:8080/api/rank",newData);
+            const rankData=await axios.post("https://scoreboard-dq8m.onrender.com/api/rank",newData);
             setPoints(rankData.data);
             setShowPoints(true);
         } catch (error) {
@@ -45,7 +45,7 @@ function Home(){
                 return;
             }
             const data={name:name};
-            await axios.post("http://localhost:8080/api/",data);
+            await axios.post("https://scoreboard-dq8m.onrender.com/api/",data);
             setShowAddUser(false);
             fetchUserData();
         } catch (error) {

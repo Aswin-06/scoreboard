@@ -10,7 +10,7 @@ function LeaderBoard()
 
     const fetchData=async () => {
         try {
-            const queryData=await axios.get("http://localhost:8080/api");
+            const queryData=await axios.get("https://scoreboard-dq8m.onrender.com/api");
             const sortedData = queryData.data.sort((a, b) => b.points - a.points);
             setTopThree(sortedData.slice(0,3));
             setOthers(sortedData.slice(3));
